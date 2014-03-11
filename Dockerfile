@@ -1,8 +1,8 @@
-# Container running Eventstore
+# Container running Event Store
 #
 # VERSION               0.1
 FROM ubuntu
-MAINTAINER Pieter Joost van de Sande "pj@born2code.net"
+MAINTAINER Alexander "iam.asm89@gmail.com"
 
 # make sure the package repository is up to date
 RUN apt-get update
