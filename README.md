@@ -7,13 +7,16 @@ A Dockerfile that produces a container that runs [EventStore].
 
 ## Building a container
 
-Clone the repository, enter the directory, then build the image:
+Clone the repository, enter the directory, then build the image. By default the
+master branch of the [EventStore repository] is used for the build:
 
 ```bash
 $ git clone https://github.com/asm89/docker-event-store.git
 $ cd docker-event-store
 $ docker build -t event-store .
 ```
+
+[EventStore repository]: https://github.com/EventStore/EventStore
 
 ## Running Event Store
 
