@@ -8,7 +8,7 @@ MAINTAINER Pieter Joost van de Sande "pj@born2code.net"
 RUN apt-get update
 
 # install packages required to build mono and the eventstore
-RUN apt-get install -y git git-core subversion
+RUN apt-get install -y git subversion
 RUN apt-get install -y autoconf automake libtool gettext libglib2.0-dev libfontconfig1-dev mono-gmcs
 RUN apt-get install -y build-essential
 
@@ -35,11 +35,11 @@ RUN mkdir -p $EVENTSTORE_LOG
 RUN mkdir -p $EVENTSTORE_DB
 
 # expose LD library path
-ENV LD_LIBRARY_PATH "$EVENTSTORE_BIN:$LD_LIBRARY_PATH"
+ENV LD_LIBRARY_PATH $EVENTSTORE_BIN
 
 # export the http and tcp port
-EXPOSE 2113:2113
-EXPOSE 1113:1113
+EXPOSE 2113
+EXPOSE 1113
 
 # set entry point to eventstore executable
 ENTRYPOINT ["mono-sgen", "/var/local/EventStore/bin/eventstore/release/anycpu/EventStore.SingleNode.exe", "--log=/opt/eventstore/logs", "--db=/opt/eventstore/db"]
